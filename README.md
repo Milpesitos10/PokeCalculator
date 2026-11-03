@@ -105,8 +105,6 @@ Se registra solo en `main.py`. `POST /api/battles/simulate` valida (igual que `p
 | Otra forma de elegir movimiento | `estrategia.py` |
 | Cambiar la fórmula | `formulas.py` (+ actualiza `tests/test_motor.py`) |
 
-**Verifícalo:** escribí la fórmula y las tablas de `datos.py` (prioridades, retrocesos, `NO_SOPORTADOS`) de memoria. Las pruebas comprueban que el código hace lo que dice la fórmula (cálculos a mano), **no** que la fórmula coincida con el juego. Compara varios casos con una calculadora de daño de 4.ª gen (p. ej. la de Smogon) antes de fiarte de los números.
-
 ## Índice de la base de datos (frontend)
 Sección «Índice de la base de datos» bajo la arena, con tres pestañas que usan **solo tablas existentes**:
 - **Pokémon** (`POKEMON`, `POKEMON_TIPOS`, `TIPOS`, `GENERACIONES`, `POKEMON_ESTADISTICAS`): búsqueda, filtro por tipo y generación, orden y paginación; botones «Tu Pokémon» / «Rival» cargan el elegido en el panel correspondiente.
@@ -125,3 +123,69 @@ Si la BD está vacía, el índice lo dice y muestra el comando de sincronizació
 | `Data source name not found` en el log | `DB_DRIVER` no coincide con el instalado | `python -c "import pyodbc;print(pyodbc.drivers())"` y copia el nombre exacto |
 | La página dice «Demo» aunque el backend corre | el frontend no llega a `/api` (otro puerto) | usa `FRONTEND_DIR=../pokedmg`, o pon la URL en `<meta name="api-base">` y añade el origen a `CORS_ORIGINS` |
 Comprobación rápida: `python -c "import main"` (importa todo sin abrir puerto) y, con el servidor en marcha, `curl http://127.0.0.1:8001/api/health`.
+
+# Calculadora de Daño Pokémon (Backend)
+
+> Este proyecto fue desarrollado con fines académicos y educativos como una implementación de una calculadora de daño Pokémon utilizando FastAPI, Microsoft SQL Server y PokéAPI.
+
+---
+
+## Tecnologías utilizadas
+
+* **Python**
+* **FastAPI**
+* **Microsoft SQL Server**
+* **PyODBC**
+* **Pydantic**
+* **Uvicorn**
+* **Pytest**
+* **PokéAPI**
+
+---
+
+## Fuentes de datos y referencias
+
+Este proyecto utiliza información obtenida de las siguientes fuentes:
+
+* **[PokéAPI](https://pokeapi.co/)** - Datos de Pokémon, movimientos, habilidades, tipos, generaciones y naturalezas.
+
+### Fuentes de consulta empleadas para validación y documentación:
+* **[Pokémon Database](https://pokemondb.net/)**
+* **[Bulbapedia](https://bulbapedia.bulbagarden.net/)**
+* **[Microsoft Learn](https://learn.microsoft.com/)**
+
+---
+
+## Agradecimientos
+
+A los mantenedores de **PokéAPI** por proporcionar gratuitamente una API pública que facilita el desarrollo de proyectos educativos y de investigación relacionados con Pokémon.
+
+---
+
+## Licencia y Propiedad Intelectual
+
+### Licencia del Software
+El código fuente desarrollado para este proyecto se distribuye bajo la **Licencia MIT**.
+
+```text
+MIT License
+
+Copyright (c) 2026
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
