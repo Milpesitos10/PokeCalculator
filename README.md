@@ -163,6 +163,14 @@ A los mantenedores de **PokéAPI** por proporcionar gratuitamente una API públi
 ---
 
 ## Licencia y Propiedad Intelectual
+Este proyecto es una herramienta educativa y no oficial. Pokémon®, Pokémon Battle®, Pokédex®, nombres de Pokémon, movimientos, habilidades, regiones, personajes, sprites, ilustraciones, imágenes y demás elementos relacionados con la franquicia Pokémon son propiedad de:
+> 
+> * **Nintendo Co., Ltd.**
+> * **Game Freak Inc.**
+> * **Creatures Inc.**
+> * **The Pokémon Company**
+> 
+> Todos los derechos sobre dichos contenidos pertenecen a sus respectivos propietarios. Este proyecto no está afiliado, patrocinado, autorizado ni respaldado por Nintendo, Game Freak, Creatures Inc. o The Pokémon Company.
 
 ### Licencia del Software
 El código fuente desarrollado para este proyecto se distribuye bajo la **Licencia MIT**.
